@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pratyush Chaubey - Software Engineer, Freelancer & Future Tech Founder">
+    <title>Pratyush Chaubey | Software Engineer & Future Founder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(32px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .nav-link {
+            position: relative;
+            color: #111827;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background: #000;
+            transition: all 0.4s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .project-card {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .project-card:hover {
+            transform: translateY(-18px);
+            box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.18);
+        }
+
+        .skill-bar {
+            height: 5px;
+            background: linear-gradient(to right, #111827, #374151);
+            border-radius: 9999px;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            line-height: 1;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-white text-black overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-black/10">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-11 h-10 bg-black text-white rounded-3xl flex items-center justify-center text-2xl font-bold heading-font">PC</div>
+                <span class="text-3xl font-semibold heading-font tracking-tighter"></span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10 text-base font-medium">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#momentum" class="nav-link">Momentum</a>
+                <a href="#targets" class="nav-link">Targets</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#journey" class="nav-link">Journey</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" 
+                    class="px-9 py-4 bg-black text-white font-semibold rounded-3xl hover:bg-zinc-800 transition-all">
+                LET'S CONNECT
+            </button>
+        </div>
+    </nav>
+    <br>
+    <br>
+
+    <!-- HERO SECTION -->
+    <section class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-12 gap-16 items-center">
+            <div class="md:col-span-7 space-y-10">
+                <div class="inline-flex items-center gap-3 px-7 py-3.5 border border-black/30 rounded-3xl text-sm font-medium">
+                    <div class="w-3 h-3 bg-black rounded-full animate-pulse"></div>
+                    OPEN TO FREELANCE &amp; FULL-TIME OPPORTUNITIES
+                </div>
+                
+                <h1 class="text-7xl md:text-8xl font-bold heading-font tracking-tighter leading-none">
+                    Hi, I'm Pratyush<br>Chaubey
+                </h1>
+                
+                <p class="text-3xl md:text-4xl font-medium text-zinc-700">
+                    Software Engineer | Freelancer | Future Tech Founder
+                </p>
+                
+                <p class="max-w-2xl text-xl text-zinc-600">
+                    MCA student at Galgotias University. Passionate about building scalable systems, 
+                    beautiful interfaces and revolutionary tech products.
+                </p>
+                
+                <div class="flex flex-wrap gap-6">
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" 
+                            class="px-10 py-6 bg-black text-white text-lg rounded-3xl font-semibold hover:scale-105 transition">
+                        HIRE ME FOR PROJECT
+                    </button>
+                    <a href="updated.pdf" download 
+                            class="px-10 py-6 border-2 border-black rounded-3xl font-semibold text-lg hover:bg-black hover:text-white transition flex items-center gap-3 inline-flex justify-center">
+                        <i class="fas fa-download"></i> DOWNLOAD RESUME
+                    </a>
+                </div>
+                
+                <div class="flex gap-8 text-4xl pt-6">
+                    <a href="https://github.com/Pratyush72" class="hover:text-zinc-600"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/pratyush-chaubey-8ab289188/" class="hover:text-zinc-600"><i class="fab fa-linkedin"></i></a>
+                    <!-- <a href="#" class="hover:text-zinc-600"><i class="fab fa-fiverr"></i></a> -->
+                    <!-- <a href="#" class="hover:text-zinc-600"><i class="fab fa-twitter"></i></a> -->
+                </div>
+            </div>
+            
+            <!-- Smaller Photo -->
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative max-w-xs">
+                    <div class="absolute -inset-6 bg-gradient-to-br from-zinc-300 to-white rounded-[3rem] rotate-6"></div>
+                    <img src="boy.png" 
+                         alt="Pratyush Chaubey" 
+                         class="relative w-full rounded-3xl shadow-2xl border border-black/10 object-cover">
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 text-xs tracking-widest flex flex-col items-center">
+            DISCOVER MORE
+            <i class="fas fa-chevron-down mt-2 animate-bounce"></i>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid md:grid-cols-12 gap-20">
+                <div class="md:col-span-5">
+                    <span class="text-sm uppercase tracking-widest text-zinc-500">01 — THE JOURNEY</span>
+                    <h2 class="text-6xl heading-font font-semibold tracking-tighter mt-6">Engineer by passion.<br>Founder by vision.</h2>
+                </div>
+                <div class="md:col-span-7 text-lg text-zinc-700 leading-relaxed space-y-8">
+                    <p>
+                        Currently pursuing MCA at Galgotias University and a BCA graduate from CCSU. 
+                        I specialize in full-stack development with deep expertise in backend architecture and scalable systems.
+                    </p>
+                    <p>
+                        With hands-on freelancing experience, I have delivered multiple production-grade applications. 
+                        My goal is to build a tech company that creates meaningful impact through innovative software solutions.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-12 pt-12 border-t">
+                        <div>
+                            <div class="stat-number text-black">10+</div>
+                            <div class="text-sm tracking-widest mt-2">PROJECTS DELIVERED</div>
+                        </div>
+                        <div>
+                            <div class="stat-number text-black">10+</div>
+                            <div class="text-sm tracking-widest mt-2">CLIENTS SERVED</div>
+                        </div>
+                        <div>
+                            <div class="stat-number text-black">2+</div>
+                            <div class="text-sm tracking-widest mt-2">YEARS EXPERIENCE</div>
+                        </div>
+                        <div>
+                            <div class="stat-number text-black">∞</div>
+                            <div class="text-sm tracking-widest mt-2">LEARNING</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ====================== LIVE MOMENTUM ====================== -->
+<section id="momentum" class="py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-3 px-6 py-3 border border-black/30 rounded-3xl text-sm font-medium">
+                <div class="w-3 h-3 bg-black rounded-full animate-pulse"></div>
+                <span>LIVE MOMENTUM</span>
+            </div>
+            <!-- <h2 class="text-5xl md:text-6xl heading-font font-semibold tracking-tighter mt-6">Current Momentum</h2> -->
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Live Project -->
+            <div class="glass p-8 rounded-3xl border border-black/10">
+                <div class="flex justify-between">
+                    <div>
+                        <div class="inline-flex items-center gap-3 py-3 rounded-3xl text-sm font-medium">
+                            <div class="w-3 h-3 bg-black rounded-full animate-pulse"></div>
+                            <span>IN PROGRESS</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mt-3">CampusForces v2.0</h3>
+                    </div>
+                    <div class="text-4xl">🚀</div>
+                </div>
+                <div class="mt-8">
+                    <div class="h-2 bg-zinc-200 rounded-full overflow-hidden">
+                        <div class="h-2 bg-black rounded-full w-[68%] animate-pulse"></div>
+                    </div>
+                    <div class="flex justify-between text-sm mt-3">
+                        <span class="font-medium">68% Complete</span>
+                        <span class="text-zinc-500">This Sprint</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This Month -->
+            <div class="glass p-8 rounded-3xl border border-black/10">
+                <h3 class="text-xl font-semibold mb-8 flex items-center gap-3">
+                    This Month 
+                    <span class="text-xs bg-black text-white px-3 py-1 rounded-full animate-pulse">LIVE</span>
+                </h3>
+                
+                <div class="space-y-8">
+                    <!-- Hours -->
+                    <div>
+                        <div class="flex justify-between mb-2 text-sm">
+                            <span class="text-zinc-600">Hours Coded</span>
+                            <span id="hoursDisplay" class="font-semibold">30 / 120</span>
+                        </div>
+                        <div class="h-2.5 bg-zinc-200 rounded-full overflow-hidden">
+                            <div id="hoursBar" class="h-2.5 bg-black rounded-full transition-all animate-pulse"" style="width: 25%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lines of Code -->
+                    <div>
+                        <div class="flex justify-between mb-2 text-sm">
+                            <span class="text-zinc-600">Lines of Code</span>
+                            <span id="linesDisplay" class="font-semibold">4,800 / 12,000</span>
+                        </div>
+                        <div class="h-2.5 bg-zinc-200 rounded-full overflow-hidden">
+                            <div id="linesBar" class="h-2.5 bg-black rounded-full transition-all animate-pulse"" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Time Record -->
+            <div class="glass p-8 rounded-3xl border border-black/10">
+                <h3 class="text-xl font-semibold mb-8">All Time Record</h3>
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center">
+                        <span class="text-zinc-600">Total Hours Coded</span>
+                        <span id="totalHours" class="font-semibold text-1xl">342</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-zinc-600">Total Lines Written</span>
+                        <span id="totalLines" class="font-semibold text-1xl">28,700</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-zinc-600">Projects Delivered</span>
+                        <span class="font-semibold text-1xl">10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// ================== INDEPENDENT CONTROL ==================
+let thisMonthHours = 30;      // ← Daily Update Here
+let thisMonthLines = 4800;    // ← Daily Update Here
+
+const hoursDisplay = document.getElementById('hoursDisplay');
+const linesDisplay = document.getElementById('linesDisplay');
+const hoursBar = document.getElementById('hoursBar');
+const linesBar = document.getElementById('linesBar');
+
+function updateMomentum() {
+    // Hours
+    const hoursPercent = thisMonthHours > 0 ? Math.min(Math.floor((thisMonthHours / 120) * 100), 100) : 0;
+    hoursDisplay.textContent = `${Math.floor(thisMonthHours)} / 120`;
+    hoursBar.style.width = hoursPercent + "%";
+
+    // Lines of Code
+    const linesPercent = thisMonthLines > 0 ? Math.min(Math.floor((thisMonthLines / 12000) * 100), 100) : 0;
+    linesDisplay.textContent = `${Math.floor(thisMonthLines).toLocaleString()} / 12,000`;
+    linesBar.style.width = linesPercent + "%";
+}
+
+// Initial Load
+updateMomentum();
+</script>
+
+<!-- ====================== INFINITE MONTHLY TARGETS SCROLLER ====================== -->
+<section id="targets" class="pb-4 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-3 px-6 py-3 border border-black/30 rounded-3xl text-sm font-medium">
+                <span>2026 PROGRESS</span>
+            </div>
+            <!-- <h2 class="text-4xl md:text-5xl heading-font font-semibold tracking-tighter mt-3">Monthly Targets</h2> -->
+        </div>
+
+        <div class="relative">
+            <div id="monthScroller" class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide scroll-smooth">
+                <!-- JS se generate hoga -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// ================== MONTHLY DATA ==================
+const baseMonths = [
+    { month: "January 2026",   targetH: 120, targetL: 12000, achievedH: 90,  achievedL: 5400 },
+    { month: "February 2026",  targetH: 120, targetL: 12000, achievedH: 82, achievedL: 6500 },
+    { month: "March 2026",     targetH: 120, targetL: 12000, achievedH: 80, achievedL: 8800 },
+    { month: "April 2026",     targetH: 120, targetL: 12000, achievedH: 60,  achievedL: 3200 },
+    { month: "May 2026",       targetH: 120, targetL: 12000, achievedH: 30,  achievedL: 4800 },
+    { month: "June 2026",      targetH: 120, targetL: 12000, achievedH: 0,   achievedL: 0 },
+    { month: "July 2026",      targetH: 120, targetL: 12000, achievedH: 0,   achievedL: 0 },
+    { month: "August 2026",    targetH: 120, targetL: 12000, achievedH: 0,   achievedL: 0 },
+    { month: "September 2026", targetH: 120, targetL: 12000, achievedH: 0,   achievedL: 0 },
+    { month: "October 2026",   targetH: 120, targetL: 12000, achievedH: 0,   achievedL: 0 },
+    { month: "November 2026",  targetH: 120, targetL: 12000, achievedH: 0,   achievedL: 0 },
+    { month: "December 2026",  targetH: 120, targetL: 12000, achievedH: 0,   achievedL: 0 }
+];
+
+const extendedData = [...baseMonths, ...baseMonths, ...baseMonths];
+
+function getStatus(percent) {
+    if (percent >= 90) return { text: "OUTSTANDING", color: "text-emerald-600" };
+    if (percent >= 80) return { text: "EXCELLENT", color: "text-emerald-600" };
+    if (percent >= 60) return { text: "VERY GOOD", color: "text-emerald-600" };
+    if (percent >= 40) return { text: "GOOD", color: "text-amber-600" };
+    if (percent > 0) return { text: "NEEDS IMPROVEMENT", color: "text-orange-600" };
+    return { text: "COMING SOON", color: "text-zinc-400" };
+}
+
+function generateCards() {
+    const container = document.getElementById('monthScroller');
+    container.innerHTML = '';
+
+    extendedData.forEach(item => {
+        const hoursPercent = item.targetH > 0 ? Math.min(Math.floor((item.achievedH / item.targetH) * 100), 100) : 0;
+        const linesPercent = item.targetL > 0 ? Math.min(Math.floor((item.achievedL / item.targetL) * 100), 100) : 0;
+        const status = getStatus(hoursPercent);
+
+        const card = document.createElement('div');
+        card.className = "min-w-[310px] snap-center glass p-8 rounded-3xl border border-black/10 hover:border-emerald-600 transition-all duration-300";
+        card.innerHTML = `
+            <div class="flex justify-between mb-6">
+                <div class="font-semibold text-lg">${item.month}</div>
+                <div class="${status.color} font-medium">${hoursPercent}%</div>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Hours Progress -->
+                <div>
+                    <div class="flex justify-between text-sm mb-2">
+                        <span class="text-zinc-600">Hours</span>
+                        <span>${item.achievedH} / ${item.targetH}</span>
+                    </div>
+                    <div class="h-2.5 bg-zinc-200 rounded-full overflow-hidden">
+                        <div class="h-2.5 bg-black rounded-full transition-all" style="width: ${hoursPercent}%"></div>
+                    </div>
+                </div>
+                
+                <!-- Lines of Code Progress -->
+                <div>
+                    <div class="flex justify-between text-sm mb-2">
+                        <span class="text-zinc-600">Lines of Code</span>
+                        <span>${item.achievedL.toLocaleString()} / ${item.targetL.toLocaleString()}</span>
+                    </div>
+                    <div class="h-2.5 bg-zinc-200 rounded-full overflow-hidden">
+                        <div class="h-2.5 bg-black rounded-full transition-all " style="width: ${linesPercent}%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t text-center">
+                <span class="${status.color} font-medium">${status.text}</span>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+generateCards();
+
+// Auto scroll to May 2026 (index 4)
+window.onload = () => {
+    const scroller = document.getElementById('monthScroller');
+    const cardWidth = 310 + 24; // card width + gap
+    scroller.scrollLeft = cardWidth * 4; 
+};
+</script>
+
+<style>
+    #monthScroller {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    #monthScroller::-webkit-scrollbar {
+        display: none;
+    }
+    #monthScroller {
+        mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+</style>
+                <div class="max-w-7xl mx-auto px-8 text-center mb-20 -mt-5  ">
+                    <div class="mt-4 text-zinc-500">
+                        <strong>Consistently hitting targets • Building discipline</strong> 
+                    </div>
+                </div>
+
+
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-20 bg-zinc-50">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-6xl heading-font font-semibold tracking-tighter text-center mb-20">Skills & Expertise</h2>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="glass p-10 rounded-3xl">
+                    <h3 class="text-3xl font-semibold mb-10">Frontend</h3>
+                    <div class="space-y-9">
+                        <div>
+                            <div class="flex justify-between mb-3"><span>HTML5 </span><span class="font-medium">98%</span></div>
+                            <div class="bg-zinc-200 h-1.5 rounded"><div class="skill-bar w-[98%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-3"><span>CSS</span><span class="font-medium">96%</span></div>
+                            <div class="bg-zinc-200 h-1.5 rounded"><div class="skill-bar w-[96%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-3"><span>JavaScript</span><span class="font-medium">94%</span></div>
+                            <div class="bg-zinc-200 h-1.5 rounded"><div class="skill-bar w-[94%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-3"><span>React.js</span><span class="font-medium">88%</span></div>
+                            <div class="bg-zinc-200 h-1.5 rounded"><div class="skill-bar w-[88%]"></div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass p-10 rounded-3xl">
+                    <h3 class="text-3xl font-semibold mb-10">Backend</h3>
+                    <div class="space-y-9">
+                        <div>
+                            <div class="flex justify-between mb-3"><span>Django + Python</span><span class="font-medium">95%</span></div>
+                            <div class="bg-zinc-200 h-1.5 rounded"><div class="skill-bar w-[95%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-3"><span>REST APIs</span><span class="font-medium">93%</span></div>
+                            <div class="bg-zinc-200 h-1.5 rounded"><div class="skill-bar w-[93%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-3"><span>FAST APIs</span><span class="font-medium">82%</span></div>
+                            <div class="bg-zinc-200 h-1.5 rounded"><div class="skill-bar w-[82%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-3"><span>Flask</span><span class="font-medium">95%</span></div>
+                            <div class="bg-zinc-200 h-1.5 rounded"><div class="skill-bar w-[95%]"></div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass p-10 rounded-3xl">
+                    <h3 class="text-3xl font-semibold mb-10">Tools & Others</h3>
+                    <div class="grid grid-cols-2 gap-y-8 text-lg">
+                        <div class="flex items-center gap-4"><i class="fas fa-check text-emerald-600"></i> Git & GitHub</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-check text-emerald-600"></i> MySQL</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-check text-emerald-600"></i> Postman</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-check text-emerald-600"></i> VS Code</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-check text-emerald-600"></i> Firebase</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-check text-emerald-600"></i> Linux</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-check text-emerald-600"></i> Docker</div>
+                        <div class="flex items-center gap-4"><i class="fas fa-check text-emerald-600"></i> AI Tools</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====================== JOURNEY TIMELINE (Reverse Order) ====================== -->
+    <!-- ====================== SMART AUTOMATIC JOURNEY ====================== -->
+    <section id="journey" class="pt-28 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-5xl md:text-6xl heading-font font-semibold tracking-tighter text-center mb-20">My Journey</h2>
+            
+            <div id="timeline" class="max-w-3xl mx-auto relative before:absolute before:left-6 before:top-0 before:h-full before:w-[2px] before:bg-black/10">
+                <!-- JavaScript se dynamically generate hoga -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+    // ================== AUTOMATIC TIMELINE DATA ==================
+    const experiences = [
+        //  {
+        //      title: "Python Developer",
+        //      company: "CampusForces",
+        //      startYear: 2025,
+        //      startMonth: 5,           // May = 5
+        //      endYear: null,           // null = Present
+        //      endMonth: null,
+        //      icon: "fa-briefcase"
+        //  },
+        {
+            title: "Freelance Software Developer",
+            company: "",
+            startYear: 2024,
+            startMonth: 8,
+            endYear: null,
+            endMonth: null,
+            icon: "fa-laptop-code"
+        },
+        {
+            title: "MCA (Master of Computer Applications)",
+            company: "Galgotias University",
+            startYear: 2024,
+            startMonth: 6,
+            endYear: null,
+            endMonth: null,
+            icon: "fa-graduation-cap"
+        },
+        {
+            title: "BCA (Bachelor of Computer Applications)",
+            company: "CCSU",
+            startYear: 2021,
+            startMonth: 6,
+            endYear: 2024,
+            endMonth: 6,
+            icon: "fa-graduation-cap"
+        }
+    ];
+
+    // ================== SMART DURATION + STATUS CALCULATOR ==================
+    function calculateDurationAndStatus(item) {
+        const start = new Date(item.startYear, item.startMonth - 1, 1);
+        const end = item.endYear ? new Date(item.endYear, item.endMonth - 1, 28) : new Date();
+
+        let years = end.getFullYear() - start.getFullYear();
+        let months = end.getMonth() - start.getMonth();
+        let days = end.getDate() - start.getDate();
+
+        if (days < 0) { months--; days += 30; }
+        if (months < 0) { years--; months += 12; }
+
+        let duration = '';
+        if (years > 0) duration += `${years} Year${years > 1 ? 's' : ''} `;
+        if (months > 0) duration += `${months} Month${months > 1 ? 's' : ''} `;
+        if (days > 0 && years === 0 && months === 0) duration += `${days} Day${days > 1 ? 's' : ''}`;
+
+        // Status Logic
+        let statusHTML = '';
+        if (!item.endYear) {
+            // Present / Ongoing
+            statusHTML = `<div class="inline-flex items-center gap-3 text-sm bg-black text-white px-5 py-2 rounded-3xl font-medium">
+                <div class="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                <span>ACTIVE</span>
+            </div>`;
+        } else {
+            // Completed
+            statusHTML = `<div class="inline-flex items-center gap-3 text-sm bg-emerald-100 text-emerald-700 px-5 py-2 rounded-3xl font-medium">
+                <i class="fas fa-check"></i>
+                <span onclick="window.open('Marksheet.pdf')" style="cursor:pointer;">COMPLETED</span>
+            </div>`;
+        }
+
+        return { duration: duration.trim() || 'Just Started', statusHTML };
+    }
+
+    // ================== GENERATE TIMELINE ==================
+    function generateTimeline() {
+        const container = document.getElementById('timeline');
+        container.innerHTML = '';
+
+        experiences.forEach(exp => {
+            const { duration, statusHTML } = calculateDurationAndStatus(exp);
+
+            const div = document.createElement('div');
+            div.className = "relative flex gap-10 items-start mb-16";
+            div.innerHTML = `
+                <div class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center flex-shrink-0 z-10">
+                    <i class="fas ${exp.icon} text-xl"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                        <div>
+                            <h3 class="text-2xl font-semibold">${exp.title}</h3>
+                            <p class="text-zinc-600">${exp.company ? exp.company + ' • ' : ''}${exp.startYear} - ${exp.endYear ? exp.endYear : 'Present'}</p>
+                        </div>
+                        ${statusHTML}
+                    </div>
+                    <div class="mt-4 text-zinc-500">
+                        <strong>Duration:</strong> <span class="font-medium text-black">${duration}</span>
+                    </div>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+    }
+
+    // Run on load
+    generateTimeline();
+    </script>
+                <div class="max-w-7xl mx-auto px-8 text-center mb-20 -mt-5  ">
+                    <div class="mt-4 text-zinc-500">
+                        <strong>Important:</strong> 
+                        <span class="font-medium text-zinc-500">
+                            After clicking the Complete <strong class=" mt-4  text-black">Button</strong>, the Degree Certificate and Experience Letter will be displayed here.
+                        </span>
+                    </div>
+                </div>  
+
+    <!-- SERVICES -->
+    <section id="services" class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-6xl heading-font font-semibold tracking-tighter text-center mb-20">Services I Provide</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="glass p-10 rounded-3xl">
+                    <div class="text-6xl mb-6">🌐</div>
+                    <h4 class="text-2xl font-semibold mb-4">Full Stack Development</h4>
+                    <p class="text-zinc-600">Modern, responsive and scalable web applications from concept to deployment.</p>
+                </div>
+                <div class="glass p-10 rounded-3xl">
+                    <div class="text-6xl mb-6">⚙️</div>
+                    <h4 class="text-2xl font-semibold mb-4">Backend API Development</h4>
+                    <p class="text-zinc-600">Robust Django & Spring Boot APIs with authentication and database design.</p>
+                </div>
+                <div class="glass p-10 rounded-3xl">
+                    <div class="text-6xl mb-6">🤖</div>
+                    <h4 class="text-2xl font-semibold mb-4">AI Integration & Automation</h4>
+                    <p class="text-zinc-600">Chatbots, business automation tools and intelligent features.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-28 bg-zinc-50">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-6xl heading-font font-semibold tracking-tighter text-center mb-20">Featured Projects</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Project 1 -->
+                <div class="project-card glass rounded-3xl overflow-hidden">
+                    <img src="https://picsum.photos/id/1015/800/480" class="w-full h-56 object-cover" alt="CampusForces">
+                    <div class="p-8">
+                      <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-4 py-1.5 bg-black text-white rounded-3xl">Django</span>
+                            <span class="text-xs px-4 py-1.5 bg-black text-white rounded-3xl">Tailwind</span>
+                            <span class="text-xs px-4 py-1.5 bg-black text-white rounded-3xl">Python</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">CampusForces</h3>
+                        <p class="text-zinc-600 mb-6">Modern educational platform with student dashboard.</p>
+                        <div class="flex gap-3">
+                            <button onclick="window.open('https://pratyush72.github.io/Edutech/')" class="flex-1 py-4 bg-black text-white rounded-2xl text-sm font-medium">Live Demo</button>
+                            <button onclick="window.open('https://github.com/Pratyush72/Edutech')" class="flex-1 py-4 border border-black rounded-2xl text-sm font-medium">GitHub</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card glass rounded-3xl overflow-hidden">
+                    <img src="https://picsum.photos/id/201/800/480" class="w-full h-56 object-cover" alt="Ecommerce">
+                    <div class="p-8">
+                      <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-4 py-1.5 bg-black text-white rounded-3xl">Django</span>
+                            <span class="text-xs px-4 py-1.5 bg-black text-white rounded-3xl">Tailwind</span>
+                            <span class="text-xs px-4 py-1.5 bg-black text-white rounded-3xl">Python</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">E-Commerce Platform</h3>
+                        <p class="text-zinc-600 mb-6">Full-featured online store with cart, payments and admin dashboard.</p>
+                        <div class="flex gap-3">
+                            <button onclick="window.open('https://pratyush72.github.io/eCom/ ')" class="flex-1 py-4 bg-black text-white rounded-2xl text-sm font-medium">Live Demo</button>
+                            <button onclick="window.open('https://github.com/Pratyush72/eCom')" class="flex-1 py-4 border border-black rounded-2xl text-sm font-medium">GitHub</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card glass rounded-3xl overflow-hidden">
+                    <img src="https://picsum.photos/id/237/800/480" class="w-full h-56 object-cover" alt="AI Chatbot">
+                    <div class="p-8">
+                      <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-4 py-1.5 bg-black text-white rounded-3xl">Django</span>
+                            <span class="text-xs px-4 py-1.5 bg-black text-white rounded-3xl">Tailwind</span>
+                            <span class="text-xs px-4 py-1.5 bg-black text-white rounded-3xl">Python</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">AI Chat Assistant</h3>
+                        <p class="text-zinc-600 mb-6">Intelligent chatbot with context memory and business automation.</p>
+                        <div class="flex gap-3">
+                            <button onclick="window.open('https://pratyush72.github.io/AI-Demo/')" class="flex-1 py-4 bg-black text-white rounded-2xl text-sm font-medium">Live Demo</button>
+                            <button onclick="window.open('https://github.com/Pratyush72/AI-Demo')" class="flex-1 py-4 border border-black rounded-2xl text-sm font-medium">GitHub</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+   <!-- ====================== FIXED EMAILJS CONTACT SECTION ====================== -->
+<section id="contact" class="py-28 bg-white">
+    <div class="max-w-2xl mx-auto px-6">
+        <div class="glass rounded-3xl p-10 md:p-16">
+            <h2 class="text-5xl md:text-6xl heading-font font-semibold tracking-tighter text-center">Let's Work Together</h2>
+            <p class="text-center text-zinc-600 mt-6 mb-12">Have a project in mind? Drop me a message.</p>
+            
+            <form id="contactForm" class="space-y-8">
+                <input type="text" id="name" placeholder="Full Name" required class="w-full px-8 py-6 border border-black/20 rounded-3xl focus:border-black outline-none text-lg">
+                <input type="email" id="email" placeholder="Your Email Address" required class="w-full px-8 py-6 border border-black/20 rounded-3xl focus:border-black outline-none text-lg">
+                <textarea id="message" placeholder="Tell me about your project..." rows="7" required class="w-full px-8 py-6 border border-black/20 rounded-3xl focus:border-black outline-none text-lg"></textarea>
+
+                <button type="submit" id="submitBtn" class="w-full py-8 bg-black text-white text-xl font-semibold rounded-3xl hover:bg-zinc-800 transition">
+                    <span id="btnText">SEND MESSAGE</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+    emailjs.init("2xoF3Q-EPOO9uK0tU");   // Your Public Key
+
+    const form = document.getElementById('contactForm');
+    const btnText = document.getElementById('btnText');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        btnText.innerHTML = 'SENDING...';
+        submitBtn.disabled = true;
+
+        const templateParams = {
+            from_name: document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+
+        console.log("Sending with params:", templateParams);   // Debugging
+
+        emailjs.send('service_fyyjw0o', 'template_cjwiebq', templateParams)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('✅ Message sent successfully! I will reply soon.');
+                form.reset();
+            })
+            .catch((error) => {
+                console.error('EmailJS Error:', error);
+                alert('❌ Failed: ' + (error.text || error));
+            })
+            .finally(() => {
+                btnText.innerHTML = 'SEND MESSAGE';
+                submitBtn.disabled = false;
+            });
+    });
+</script>
+    <!-- FOOTER -->
+<footer class="bg-black text-white py-10 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-8">
+
+        <!-- Existing Footer Content -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+            
+            <div>
+                <h3 class="text-xl font-semibold">Pratyush</h3>
+                <p class="text-zinc-500 text-sm">
+                    Software Engineer • Freelancer • Open to Opportunities
+                </p>
+            </div>
+
+            <div class="flex gap-6 text-sm text-zinc-400">
+                <a href="https://github.com/Pratyush72" class="hover:text-white transition">GitHub</a>
+                <a href="https://www.linkedin.com/in/pratyush-chaubey-8ab289188/" class="hover:text-white transition">LinkedIn</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
+            </div>
+
+        </div>
+
+        <!-- MINI SYSTEM CONSOLE -->
+        <div class="border border-zinc-800 rounded-2xl bg-zinc-950 p-4 font-mono text-[11px] leading-6 overflow-hidden">
+
+            <p class="text-green-400">
+                [ SYSTEM ] Portfolio initialized successfully...
+            </p>
+
+            <p class="text-zinc-500">
+                > Skills loaded: HTML, CSS, JavaScript, React
+            </p>
+
+            <p class="text-zinc-500">
+                > Current focus: Full-Stack Development & Freelancing
+            </p>
+
+            <p class="text-zinc-500">
+                > Status: Available for opportunities
+            </p>
+
+            <p class="text-red-400">
+                > Sleep schedule not found...
+            </p>
+
+            <p class="text-green-400 animate-pulse">
+                [ SYSTEM ] All systems operational ●
+            </p>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="mt-6 text-center text-xs text-zinc-600">
+            © 2026 Pratyush. All rights reserved.
+        </div>
+
+    </div>
+</footer>
+
+    <script>
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Thank you! Your message has been received. I'll get back to you soon.");
+            this.reset();
+        });
+
+        function downloadResume() {
+            const link = document.createElement('a');
+            link.href = 'updated.pdf';
+            link.download = 'updated.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+       <!-- This Is Important for Inspect -->
+  <script>
+  // Disable Right Click
+  document.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+  });
+
+  // Disable Inspect Shortcuts
+  document.addEventListener("keydown", (e) => {
+
+    // F12
+    if (e.key === "F12") {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+I
+    if (e.ctrlKey && e.shiftKey && e.key === "I") {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+J
+    if (e.ctrlKey && e.shiftKey && e.key === "J") {
+      e.preventDefault();
+    }
+
+    // Ctrl+U (View Source)
+    if (e.ctrlKey && e.key === "u") {
+      e.preventDefault();
+    }
+  });
+</script>  
+</body>
+</html>
