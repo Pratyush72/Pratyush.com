@@ -196,121 +196,388 @@
         </div>
     </section>
 
-        <!-- ====================== LIVE MOMENTUM ====================== -->
-<section id="momentum" class="py-28 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <div class="inline-flex items-center gap-3 px-6 py-3 border border-black/30 rounded-3xl text-sm font-medium">
-                <div class="w-3 h-3 bg-black rounded-full animate-pulse"></div>
-                <span>LIVE MOMENTUM</span>
-            </div>
-            <!-- <h2 class="text-5xl md:text-6xl heading-font font-semibold tracking-tighter mt-6">Current Momentum</h2> -->
-        </div>
+        <!-- ====================== PREMIUM LIVE BOXES ====================== -->
+    <section class="pt-6 pb-8 bg-white border-b border-black/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Live Project -->
-            <div class="glass p-8 rounded-3xl border border-black/10">
-                <div class="flex justify-between">
+                <!-- LEFT BOX - LIVE TIME -->
+                <div
+                    class="inline-flex items-center gap-6 px-7 py-5 rounded-[2rem] border border-black/10 bg-white shadow-sm w-full md:w-auto">
                     <div>
-                        <div class="inline-flex items-center gap-3 py-3 rounded-3xl text-sm font-medium">
+                        <div class="flex items-center gap-2 mb-1">
+                            <div class="w-2.5 h-2.5 bg-black rounded-full animate-pulse"></div>
+                            <span class="text-[11px] uppercase tracking-[0.25em] text-zinc-500 font-medium">Live
+                                Time</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-zinc-500 font-medium">
+                            <span id="liveDay">Monday</span>
+                            <span>•</span>
+                            <span id="liveDate">MAY 11</span>
+                        </div>
+                    </div>
+
+                    <div id="liveClock" class="text-3xl md:text-4xl font-bold tracking-tight">
+                        11<span class="animate-pulse">:</span>21
+                    </div>
+                </div>
+
+                <!-- RIGHT BOX - LIVE STREAK / FOCUS -->
+                <div
+                    class="inline-flex items-center gap-6 px-7 py-5 rounded-[2rem] border border-black/10 bg-white shadow-sm w-full md:w-auto">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
+                            <span class="text-[11px] uppercase tracking-[0.25em] text-emerald-600 font-medium">Today's
+                                Focus</span>
+                        </div>
+                        <div class="text-sm text-zinc-600 font-medium">
+                            Backend Architecture
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <div class="text-3xl font-bold text-emerald-600" id="streakCount">11</div>
+                        <div class="text-[10px] uppercase tracking-widest text-emerald-600 -mt-1">Day Streak</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // ====================== LIVE CLOCK ======================
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours().toString().padStart(2, '0');
+            let minutes = now.getMinutes().toString().padStart(2, '0');
+
+            document.getElementById('liveClock').innerHTML = `${hours}<span class="animate-pulse">:</span>${minutes}`;
+
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            document.getElementById('liveDay').textContent = days[now.getDay()];
+
+            const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+            document.getElementById('liveDate').textContent = `${months[now.getMonth()]} ${now.getDate()}`;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+
+
+
+    <!-- ====================== LIVE MOMENTUM ====================== -->
+    <section id="momentum" class="py-28 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div
+                    class="inline-flex items-center gap-3 px-6 py-3 border border-black/30 rounded-3xl text-sm font-medium">
+                    <div class="w-3 h-3 bg-black rounded-full animate-pulse"></div>
+                    <span>LIVE MOMENTUM</span>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- ================= LIVE PROJECT ================= -->
+                <div class="glass p-8 rounded-3xl border border-black/10">
+                    <div class="flex justify-between">
+                        <div>
+                            <div class="inline-flex items-center gap-3 py-3 rounded-3xl text-sm font-medium">
+                                <div class="w-3 h-3 bg-black rounded-full animate-pulse"></div>
+                                <span>IN PROGRESS</span>
+                            </div>
+                            <h3 class="text-2xl font-semibold mt-3">
+                                CampusForces v2.0
+                            </h3>
+                        </div>
+                        <div class="text-4xl">🚀</div>
+                    </div>
+                    <div class="mt-8">
+                        <div class="h-2 bg-zinc-200 rounded-full overflow-hidden">
+                            <div class="h-2 bg-black rounded-full w-[68%] "></div>
+                        </div>
+                        <div class="flex justify-between text-sm mt-3">
+                            <span class="font-medium">68% Complete</span>
+                            <span class="text-zinc-500">
+                                This Sprint
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= THIS MONTH ================= -->
+                <div class="glass p-8 rounded-3xl border border-black/10">
+
+                    <div class="flex justify-between items-center mb-8">
+                        <div class="inline-flex items-center gap-3 py-3 rounded-3xl text-sm font-semibold">
                             <div class="w-3 h-3 bg-black rounded-full animate-pulse"></div>
-                            <span>IN PROGRESS</span>
-                        </div>
-                        <h3 class="text-2xl font-semibold mt-3">CampusForces v2.0</h3>
-                    </div>
-                    <div class="text-4xl">🚀</div>
-                </div>
-                <div class="mt-8">
-                    <div class="h-2 bg-zinc-200 rounded-full overflow-hidden">
-                        <div class="h-2 bg-black rounded-full w-[68%] animate-pulse"></div>
-                    </div>
-                    <div class="flex justify-between text-sm mt-3">
-                        <span class="font-medium">68% Complete</span>
-                        <span class="text-zinc-500">This Sprint</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- This Month -->
-            <div class="glass p-8 rounded-3xl border border-black/10">
-                <h3 class="text-xl font-semibold mb-8 flex items-center gap-3">
-                    This Month 
-                    <span class="text-xs bg-black text-white px-3 py-1 rounded-full animate-pulse">LIVE</span>
-                </h3>
-                
-                <div class="space-y-8">
-                    <!-- Hours -->
-                    <div>
-                        <div class="flex justify-between mb-2 text-sm">
-                            <span class="text-zinc-600">Hours Coded</span>
-                            <span id="hoursDisplay" class="font-semibold">30 / 120</span>
+                            <span>THIS MONTH</span>
                         </div>
-                        <div class="h-2.5 bg-zinc-200 rounded-full overflow-hidden">
-                            <div id="hoursBar" class="h-2.5 bg-black rounded-full transition-all animate-pulse"" style="width: 25%"></div>
-                        </div>
+                        <!-- TODAY P&L -->
+                        <span id="todayPL"
+                            class="text-xs font-semibold px-3 py-1 rounded-full bg-zinc-100 text-green-600">
+                            +0.00%
+                        </span>
                     </div>
-                    
-                    <!-- Lines of Code -->
-                    <div>
-                        <div class="flex justify-between mb-2 text-sm">
-                            <span class="text-zinc-600">Lines of Code</span>
-                            <span id="linesDisplay" class="font-semibold">4,800 / 12,000</span>
-                        </div>
-                        <div class="h-2.5 bg-zinc-200 rounded-full overflow-hidden">
-                            <div id="linesBar" class="h-2.5 bg-black rounded-full transition-all animate-pulse"" style="width: 40%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- All Time Record -->
-            <div class="glass p-8 rounded-3xl border border-black/10">
-                <h3 class="text-xl font-semibold mb-8">All Time Record</h3>
-                <div class="space-y-6">
-                    <div class="flex justify-between items-center">
-                        <span class="text-zinc-600">Total Hours Coded</span>
-                        <span id="totalHours" class="font-semibold text-1xl">345</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-zinc-600">Total Lines Written</span>
-                        <span id="totalLines" class="font-semibold text-1xl">28,900</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-zinc-600">Projects Delivered</span>
-                        <span class="font-semibold text-1xl">10</span>
+                    <div class="space-y-8">
+
+                        <!-- HOURS -->
+                        <div>
+
+                            <div class="flex justify-between mb-2 text-sm">
+
+                                <span class="text-zinc-600">
+                                    Hours Coded
+                                </span>
+
+                                <span id="hoursDisplay" class="font-semibold">
+                                    30 / 120
+                                </span>
+
+                            </div>
+
+                            <div class="h-2.5 bg-zinc-200 rounded-full overflow-hidden">
+
+                                <div id="hoursBar" class="h-2.5 bg-black rounded-full transition-all"
+                                    style="width: 25%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- LINES -->
+                        <div>
+
+                            <div class="flex justify-between mb-2 text-sm">
+
+                                <span class="text-zinc-600">
+                                    Lines of Code
+                                </span>
+
+                                <span id="linesDisplay" class="font-semibold">
+                                    4,800 / 12,000
+                                </span>
+
+                            </div>
+
+                            <div class="h-2.5 bg-zinc-200 rounded-full overflow-hidden">
+
+                                <div id="linesBar" class="h-2.5 bg-black rounded-full transition-all"
+                                    style="width: 40%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
+
+
+
+                <!-- ================= ALL TIME RECORD ================= -->
+                <div class="glass p-8 rounded-3xl border border-black/10">
+                    <div class="inline-flex items-center gap-3 py-3 rounded-3xl text-sm font-bold mb-8">
+                        <div class="w-3 h-3 bg-black rounded-full "></div>
+                        <span>ALL TIME RECORD</span>
+                    </div>
+
+                    <div class="space-y-6">
+
+                        <div class="flex justify-between items-center">
+
+                            <span class="text-zinc-600">
+                                Total Hours Coded
+                            </span>
+
+                            <span id="totalHours" class="font-semibold text-1xl">
+                                345
+                            </span>
+
+                        </div>
+
+                        <div class="flex justify-between items-center">
+
+                            <span class="text-zinc-600">
+                                Total Lines Written
+                            </span>
+
+                            <span id="totalLines" class="font-semibold text-1xl">
+                                28,900
+                            </span>
+
+                        </div>
+
+                        <div class="flex justify-between items-center">
+
+                            <span class="text-zinc-600">
+                                Projects Delivered
+                            </span>
+
+                            <span class="font-semibold text-1xl">
+                                10
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <script>
+        // ================= DAILY INPUT CONTROL =================
 
-<script>
-// ================== INDEPENDENT CONTROL ==================
-let thisMonthHours = 33;      // ← Daily Update Here
-let thisMonthLines = 5000;    // ← Daily Update Here
+        // ← ONLY UPDATE THESE VALUES
+        let thisMonthHours = 33;      // ← Daily Update Here
+        let thisMonthLines = 5000;   // ← Daily Update Here
 
-const hoursDisplay = document.getElementById('hoursDisplay');
-const linesDisplay = document.getElementById('linesDisplay');
-const hoursBar = document.getElementById('hoursBar');
-const linesBar = document.getElementById('linesBar');
+        // ================= ELEMENTS =================
 
-function updateMomentum() {
-    // Hours
-    const hoursPercent = thisMonthHours > 0 ? Math.min(Math.floor((thisMonthHours / 120) * 100), 100) : 0;
-    hoursDisplay.textContent = `${Math.floor(thisMonthHours)} / 120`;
-    hoursBar.style.width = hoursPercent + "%";
+        const hoursDisplay =
+            document.getElementById('hoursDisplay');
 
-    // Lines of Code
-    const linesPercent = thisMonthLines > 0 ? Math.min(Math.floor((thisMonthLines / 12000) * 100), 100) : 0;
-    linesDisplay.textContent = `${Math.floor(thisMonthLines).toLocaleString()} / 12,000`;
-    linesBar.style.width = linesPercent + "%";
-}
+        const linesDisplay =
+            document.getElementById('linesDisplay');
 
-// Initial Load
-updateMomentum();
-</script>
+        const hoursBar =
+            document.getElementById('hoursBar');
+
+        const linesBar =
+            document.getElementById('linesBar');
+
+        const todayPL =
+            document.getElementById('todayPL');
+
+
+
+        // ================= MAIN FUNCTION =================
+
+        function updateMomentum() {
+
+            // ================= HOURS =================
+
+            const hoursPercent =
+                thisMonthHours > 0
+                    ? Math.min(
+                        Math.floor((thisMonthHours / 120) * 100),
+                        100
+                    )
+                    : 0;
+
+            hoursDisplay.textContent =
+                `${Math.floor(thisMonthHours)} / 120`;
+
+            hoursBar.style.width =
+                hoursPercent + "%";
+
+
+
+            // ================= LINES =================
+
+            const linesPercent =
+                thisMonthLines > 0
+                    ? Math.min(
+                        Math.floor((thisMonthLines / 12000) * 100),
+                        100
+                    )
+                    : 0;
+
+            linesDisplay.textContent =
+                `${Math.floor(thisMonthLines).toLocaleString()} / 12,000`;
+
+            linesBar.style.width =
+                linesPercent + "%";
+
+            // ================= TODAY P&L =================
+
+            // Auto Detect Month Days
+            const totalDays = new Date(
+                new Date().getFullYear(),
+                new Date().getMonth() + 1,
+                0
+            ).getDate();
+
+
+            // Current Day
+            const currentDay =
+                new Date().getDate();
+
+            // ================= HOURS PERFORMANCE =================
+
+            const expectedHours =
+                (120 / totalDays) * currentDay;
+
+            const hoursPercentDiff =
+                expectedHours > 0
+                    ? (
+                        (
+                            thisMonthHours - expectedHours
+                        ) / expectedHours
+                    ) * 100
+                    : 0;
+
+
+            // ================= LINES PERFORMANCE =================
+
+            const expectedLines =
+                (12000 / totalDays) * currentDay;
+
+            const linesPercentDiff =
+                expectedLines > 0
+                    ? (
+                        (
+                            thisMonthLines - expectedLines
+                        ) / expectedLines
+                    ) * 100
+                    : 0;
+
+
+
+            // ================= FINAL P&L =================
+
+            const finalPercent =
+                (
+                    hoursPercentDiff +
+                    linesPercentDiff
+                ) / 2;
+
+            // ================= SHOW VALUE =================
+
+            todayPL.textContent =
+                `${finalPercent >= 0 ? '+' : ''}${finalPercent.toFixed(2)}%`;
+
+
+
+            // ================= GREEN / RED =================
+
+            if (finalPercent >= 0) {
+
+                todayPL.classList.remove('text-red-600');
+
+                todayPL.classList.add('text-green-600');
+
+            } else {
+
+                todayPL.classList.remove('text-green-600');
+
+                todayPL.classList.add('text-red-600');
+            }
+        }
+
+
+
+        // ================= INITIAL LOAD =================
+
+        updateMomentum();
+
+    </script>
 
 <!-- ====================== INFINITE MONTHLY TARGETS SCROLLER ====================== -->
 <section id="targets" class="pb-4 bg-white">
