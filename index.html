@@ -396,7 +396,7 @@
                             </span>
 
                             <span id="totalHours" class="font-semibold text-1xl">
-                                350
+                                352
                             </span>
 
                         </div>
@@ -408,7 +408,7 @@
                             </span>
 
                             <span id="totalLines" class="font-semibold text-1xl">
-                                30,400
+                                30,600
                             </span>
 
                         </div>
@@ -436,8 +436,8 @@
         // ================= DAILY INPUT CONTROL =================
 
         // ← ONLY UPDATE THESE VALUES
-        let thisMonthHours = 38;      // ← Daily Update Here
-        let thisMonthLines = 6500;   // ← Daily Update Here
+        let thisMonthHours = 40;      // ← Daily Update Here
+        let thisMonthLines = 6700;   // ← Daily Update Here
 
         // ================= ELEMENTS =================
 
@@ -605,7 +605,7 @@ const baseMonths = [
     { month: "February 2026",  targetH: 120, targetL: 12000, achievedH: 82, achievedL: 6500 },
     { month: "March 2026",     targetH: 120, targetL: 12000, achievedH: 80, achievedL: 8800 },
     { month: "April 2026",     targetH: 120, targetL: 12000, achievedH: 60,  achievedL: 3200 },
-    { month: "May 2026",       targetH: 120, targetL: 12000, achievedH: 38,  achievedL: 6500 },
+    { month: "May 2026",       targetH: 120, targetL: 12000, achievedH: 40,  achievedL: 6700 },
     { month: "June 2026",      targetH: 120, targetL: 12000, achievedH: 0,   achievedL: 0 },
     { month: "July 2026",      targetH: 120, targetL: 12000, achievedH: 0,   achievedL: 0 },
     { month: "August 2026",    targetH: 120, targetL: 12000, achievedH: 0,   achievedL: 0 },
@@ -1143,7 +1143,143 @@ window.onload = () => {
         });
     </script>
 
-       <!-- This Is Important for Inspect -->
+
+    <!-- ====================== COOKIE CONSENT ====================== -->
+<div id="cookieConsent" class="fixed inset-0 bg-black/70 flex items-center justify-center z-[9999] hidden">
+    <div class="bg-zinc-900 border border-zinc-700 rounded-3xl max-w-md w-full mx-4 p-8">
+        <h3 class="text-2xl font-semibold mb-4 text-white">We value your privacy</h3>
+        <p class="text-zinc-400 mb-8 text-[15px]">
+            This portfolio uses cookies to improve user experience, enable live activity features, and optimize website performance.
+        </p>
+        <div class="flex gap-4">
+            <button onclick="rejectCookies()" 
+                    class="flex-1 py-4 border border-zinc-700 rounded-2xl font-medium text-white hover:bg-zinc-800 transition">
+                Reject
+            </button>
+            <button onclick="acceptCookies()" 
+                    class="flex-1 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-zinc-200 transition">
+                Accept All
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ====================== VISITOR BAR ====================== -->
+<div id="visitorBar" style="display:none;" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-black border border-zinc-700 rounded-full px-4 py-2.5 flex items-center gap-1 shadow-2xl z-50">
+    
+    <!-- Status -->
+    <div id="vPill" class="flex items-center gap-2 px-5 py-1.5 rounded-full text-sm font-medium">
+        <div id="vDot" class="w-2.5 h-2.5 rounded-full"></div>
+        <span id="vTxt">Online</span>
+    </div>
+
+    <div class="w-px h-6 bg-zinc-700 mx-1"></div>
+
+    <!-- Today -->
+    <div class="px-4 text-center">
+        <span class="text-[10px] text-zinc-500 block">TODAY</span>
+        <span id="todayEl" class="text-white font-medium">248</span>
+    </div>
+
+    <div class="w-px h-6 bg-zinc-700 mx-1"></div>
+
+    <!-- Total -->
+    <div class="px-4 text-center">
+        <span class="text-[10px] text-zinc-500 block">TOTAL</span>
+        <span id="totalEl" class="text-white font-medium">12,847</span>
+    </div>
+
+    <div class="w-px h-6 bg-zinc-700 mx-1"></div>
+
+    <!-- Last Ping -->
+    <div class="flex items-center gap-2 px-4">
+        <div class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></div>
+        <span id="pingEl" class="text-xs text-zinc-400">just now</span>
+    </div>
+</div>
+
+<script>
+    var OWNER_STATUS = "online";   // ← Yahan change karo
+
+    var todayCount = 4;
+    var totalCount = 347;
+    var secondsSince = 0;
+
+    function applyStatus() {
+        var pill = document.getElementById('vPill');
+        var dot  = document.getElementById('vDot');
+        var txt  = document.getElementById('vTxt');
+
+        if (OWNER_STATUS === 'online') {
+            pill.className = 'flex items-center gap-2 px-5 py-1.5 rounded-full text-sm font-medium bg-emerald-500/10 text-emerald-400';
+            dot.className  = 'w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse';
+            txt.textContent = 'Online';
+        } else {
+            pill.className = 'flex items-center gap-2 px-5 py-1.5 rounded-full text-sm font-medium bg-red-500/10 text-red-400';
+            dot.className  = 'w-2.5 h-2.5 bg-red-400 rounded-full';
+            txt.textContent = 'Offline';
+        }
+    }
+
+    function updatePing() {
+        secondsSince++;
+        var el = document.getElementById('pingEl');
+        if (secondsSince < 10) el.textContent = 'just now';
+        else if (secondsSince < 60) el.textContent = secondsSince + 's ago';
+        else el.textContent = Math.floor(secondsSince / 60) + 'm ago';
+    }
+
+    function tick() {
+        if (OWNER_STATUS !== 'online') return;
+
+        todayCount += Math.floor(Math.random() * 2) + 1;
+        totalCount += Math.floor(Math.random() * 2) + 1;
+        secondsSince = 0;
+
+        document.getElementById('todayEl').textContent = todayCount.toLocaleString();
+        document.getElementById('totalEl').textContent = totalCount.toLocaleString();
+    }
+
+    function showVisitorBar() {
+        document.getElementById('visitorBar').style.display = 'flex';
+        applyStatus();
+        document.getElementById('todayEl').textContent = todayCount.toLocaleString();
+        document.getElementById('totalEl').textContent = totalCount.toLocaleString();
+        updatePing();
+        setInterval(updatePing, 1000);
+        setInterval(tick, 8000);
+    }
+
+    function acceptCookies() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookieConsent').classList.add('hidden');
+        document.body.style.overflow = '';
+        showVisitorBar();
+    }
+
+    function rejectCookies() {
+        localStorage.setItem('cookiesAccepted', 'false');
+        document.getElementById('cookieConsent').classList.add('hidden');
+        document.body.style.overflow = '';
+        showVisitorBar();   // Reject pe bhi bar dikhega
+    }
+
+    // Show consent only once
+    if (!localStorage.getItem('cookiesAccepted')) {
+        setTimeout(() => {
+            document.getElementById('cookieConsent').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }, 1000);
+    } else {
+        // Agar pehle se consent diya hai to directly bar dikhao
+        showVisitorBar();
+    }
+</script>
+
+
+
+
+       <!-- This Is Important for Inspect button disable-->
   <script>
   // Disable Right Click
   document.addEventListener("contextmenu", (e) => {
